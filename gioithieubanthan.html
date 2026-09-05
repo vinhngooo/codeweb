@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Giới thiệu bản thân</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 40px auto;
+                padding: 20px;
+                line-height: 1.6;
+                transition: 0.3s;
+            }
+            .khung-the {
+                border: 1px solid #e0e0e0;
+                border-radius: 12px;
+                padding: 30px 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                background-color: #ffffff;
+                transition: 0.3s;
+            }
+            header, nav, main {
+                text-align: center;
+            }
+            nav {
+                margin: 25px 0;
+            }
+            nav a {
+                display: inline-block;
+                padding: 8px 16px;
+                margin: 0 4px;
+                background-color: #a9004c;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: 14px;
+            }
+            #nutbam {
+                padding: 8px 16px;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 6px;
+                border: 1px solid #aaa;
+                background-color: #fff;
+                margin-top: 15px;
+            }
+            /*darkmode*/
+            .dark-mode {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            .dark-mode .khung-the {
+                background-color: #242424;
+                border-color: #333;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+            .dark-mode nav a {
+                background-color: #333;
+            }
+            .dark-mode #nutbam {
+                background-color: #2a2a2a;
+                color: #fff;
+                border-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="khung-the">
+            <header>
+                <h1>Đây là Ngô Quang Vinh, chàng trai Yên Bái học PTIT</h1>
+            </header>
+
+            <nav>
+                <a href="https://www.facebook.com/ngo.quang.vinh.766463" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/nvinngo/" target="_blank">Instagram</a>
+                <a href="https://github.com/vinhngooo" target="_blank">GitHub</a>
+            </nav>
+
+            <main>
+                <h2 id="loichao">Xin chào!</h2>
+                <p>Rất vui vì mọi người đã bấm vào đây, chúc mọi người một ngày vui vẻ.</p>
+                <button id="nutbam">Đổi màu nền</button>
+            </main>
+        </div>
+
+        <script>
+            var gio = new Date().getHours();
+            var loichao = document.getElementById("loichao");
+
+            if (gio < 12) {
+                loichao.innerText = "Buổi sáng tốt lành";
+            } else if (gio < 18) {
+                loichao.innerText = "Chào buổi chiều";
+            } else {
+                loichao.innerText = "Mặt trời đã lặn, buổi tối vui vẻ";
+            }
+
+            const body = document.body;
+            const btn = document.getElementById('nutbam');
+
+            btn.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+            });
+        </script>
+    </body>
+</html>
